@@ -46,11 +46,11 @@ button { font: inherit; cursor: pointer; border: none; outline: none; }
   overflow: hidden;
 }
 
-/* Background fog wash */
+/* Background fog wash — dark vignette to maintain dark tone */
 .fog-base {
   position: absolute;
   inset: 0;
-  background: radial-gradient(ellipse at 50% 60%, rgba(200, 220, 252, 0.04) 0%, transparent 80%);
+  background: radial-gradient(ellipse at 50% 60%, rgba(6, 4, 14, 0.25) 0%, transparent 80%);
   pointer-events: none;
 }
 
@@ -74,22 +74,23 @@ button { font: inherit; cursor: pointer; border: none; outline: none; }
   animation-delay: var(--delay-v);
 }
 
-/* Colors */
+/* Colors — dark midnight colors that blend into the night instead of washing it out */
 .fog-wisp--cool {
   background: radial-gradient(ellipse at 50% 50%,
-    rgba(180, 210, 255, 0.11) 0%,
-    rgba(160, 195, 250, 0.05) 45%,
+    rgba(14, 10, 28, 0.35) 0%,
+    rgba(10, 7, 20, 0.15) 45%,
     transparent 70%
   );
 }
 
 .fog-wisp--warm {
   background: radial-gradient(ellipse at 50% 50%,
-    rgba(255, 220, 160, 0.07) 0%,
-    rgba(255, 190, 120, 0.03) 45%,
+    rgba(255, 150, 50, 0.02) 0%,
+    rgba(255, 130, 30, 0.005) 45%,
     transparent 70%
   );
 }
+
 
 @keyframes fog-drift-h {
   from { transform: translateX(calc(-50% + calc(var(--dir-h, 1) * -12vw))); }
